@@ -11,6 +11,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(notes_params)
+    @note.user_id = current_user.id
     if @note.save
      redirect_to notes_path, notice: "活動記録を作成しました！"
     else

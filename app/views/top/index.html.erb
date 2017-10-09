@@ -1,0 +1,41 @@
+<header>
+  <ul>
+   
+ <li><%= link_to "storytime", root_path %></li>  
+ <li><%= link_to "トップページ", root_path %></li>
+ <li><%= link_to "活動記録", notes_path %></li>    
+    
+  </ul>
+</header>
+
+<section class="main-header">
+  <p class="flash"><%= notice %><%= alert %></p>
+ </section>
+
+<section class="about">
+  <h2>しおりの会</h2>
+  <p>
+     読み語りボランティアのアプリです<br>
+  </p>
+</section>
+
+<section class="function container-fluid">
+  <div class="row">
+      
+   <div class="function-images">      
+      
+     <h2>活用してね</h2>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="function-image">
+          <img src="<%= asset_path "book.png" %>">
+         <p>a book</p>
+        </div>
+      </div>        
+      
+   </div>
+  </div>
+</section>
+
+<footer>
+  <p>読み語りボランティア</p>
+</footer>

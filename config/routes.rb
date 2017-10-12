@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :notes
+  resources :pictures
 
   root 'top#index'
   

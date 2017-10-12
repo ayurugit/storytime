@@ -50,3 +50,7 @@ gem 'jquery-turbolinks'
 gem 'devise'
 
 gem 'devise-bootstrap-views'
+
+gem 'carrierwave'
+
+gem 'mini_magick'

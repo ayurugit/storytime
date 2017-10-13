@@ -14,11 +14,10 @@
 <p>記入例</p>
 <p>日付：yyyymmdd、学年：□年、クラス：□組、本：雨にも負けず、著者：宮沢賢治</p>
 
-      <div class="form-group">
-        <label for="date">日付</label>
-        <input type="text" class="form-control datepicker1" name="date" id="date" placeholder="日付（yyyymmdd）" >
-      </div>
-    </div>
+  <div class="form-group">
+  　<label for="date">日付</label>
+  　<input type="text" class="form-control datepicker1" name="date" id="date" placeholder="日付（yyyy-mm-dd）" >
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -30,13 +29,14 @@
 
     <script>
       $('.datepicker1').datepicker({
-      format: "yyyy/mm/dd",
+      format: "yyyy-mm-dd",
       language: "ja",
       autoclose: true, //日付選択で自動的にカレンダーを閉じる
       orientation:'bottom left'
       });
     </script>
 
+  </div>    
   <br>
   <%= f.label :学年 %>
   <%= f.text_field :grade, placeholder: "学年（■年）", class:'form-control'%>

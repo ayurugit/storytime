@@ -14,35 +14,20 @@
 <p>記入例</p>
 <p>日付：yyyymmdd、学年：□年、クラス：□組、本：雨にも負けず、著者：宮沢賢治</p>
 
-  <div class="form-group">
-  　<label for="date">日付</label>
-  　<input type="text" class="form-control datepicker1" name="date" id="date" placeholder="日付（yyyy-mm-dd）" >
+   
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Datepicker for Bootstrap -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/locales/bootstrap-datepicker.ja.min.js"></script>
-
-    <script>
-      $('.datepicker1').datepicker({
-      format: "yyyy-mm-dd",
-      language: "ja",
-      autoclose: true, //日付選択で自動的にカレンダーを閉じる
-      orientation:'bottom left'
-      });
-    </script>
-
-  </div>    
+  <br>
+  <%= f.label :日付 %>
+  <br>
+  <%= f.date_field :date %>  
   <br>
   <%= f.label :学年 %>
-  <%= f.text_field :grade, placeholder: "学年（■年）", class:'form-control'%>
   <br>
+  <%= f.select :grade, [["1年", "1年"], ["2年", "2年"], ["3年", "3年"], ["4年", "４年"], ["5年", "5年"],["6年", "6年"], ["学習室", "学習室"]], placeholder: "学年（■年）", class:'form-control'%>
+  <br>  
   <%= f.label :クラス %>
-  <%= f.text_field :place, placeholder: "クラス（■組/その他）", class:'form-control'%>
+  <br>
+  <%= f.select :place, [["1組", "1組"], ["2組", "2組"], ["3組", "3組"], ["4組", "４組　"], ["5組", "5組"],["学年", "学年"], ["移動", "移動"]], placeholder: "クラス", class:'form-control'%>
   <br>
   <%= f.label :本 %>
   <%= f.text_field :book_title,  placeholder: "本のタイトル", class:'form-control'%>

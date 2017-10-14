@@ -3,8 +3,8 @@ class NotesController < ApplicationController
 
   def index
    @notes = Note.all
-  end
-   
+   @search = Note.search(params[:q])
+   @notes = @search.result  
   end
 
   def new

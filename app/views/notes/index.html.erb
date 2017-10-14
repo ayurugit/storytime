@@ -3,7 +3,18 @@
 
 <p><%= notice %></p>
 
+<h3><caption align="center">記録の作成</caption></h3>
 <%= link_to "活動記録を作成する", new_note_path, class: 'btn btn-default' %>
+
+<h3><caption align="center">検索機能</caption></h3>
+<%= search_form_for @search do |f| %>
+  <div class="form-group">
+
+　　<%= f.label :date_or_grade_or_book_title_or_author_cont %>
+　  <%= f.search_field :date_or_grade_or_book_title_or_author_cont, class: "form-control", placeholder: "検索" %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
 
 
 <h3><caption align="center">活動記録一覧</caption></h3>

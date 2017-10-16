@@ -20,7 +20,6 @@ class NotesController < ApplicationController
     end
   end
   
-  
 
   def edit
   end
@@ -41,7 +40,7 @@ class NotesController < ApplicationController
 
   private
     def notes_params
-      params.require(:note).permit(:date, :grade, :place, :book_title, :author)
+      params.require(:note).permit(:date, :grade, :place, :book_title, :author, :member)
     end
     
     def set_note

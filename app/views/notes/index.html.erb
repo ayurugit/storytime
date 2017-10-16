@@ -22,6 +22,12 @@
         </div>
         <div class="col-sm-6">
           <div class="form-group">
+            <%= f.label :member_cont %>
+            <%= f.text_field :member_cont, class: "form-control", placeholder: "部分一致" %>
+          </div>
+        </div>        
+        <div class="col-sm-6">
+          <div class="form-group">
             <%= f.label :book_title_or_author_cont %>
             <%= f.text_field :book_title_or_author_cont, class: "form-control", placeholder: "複数条件部分一致" %>
           </div>
@@ -51,6 +57,7 @@
     <th>クラス</th>
     <th>本</th>
     <th>著者</th> 
+    <th>担当</th>     
     <th>編集</th>
     <th>削除</th> 
 </tr>
@@ -65,7 +72,8 @@
   <td data-label="学年"><%= note.grade %></td>
   <td data-label="クラス"><%= note.place %></td>
   <td data-label="本"><%= note.book_title %></td>
-  <td data-label="著者"><%= note.author %></td>  
+  <td data-label="著者"><%= note.author %></td> 
+  <td data-label="担当"><%= note.member %></td>   
   <td><%= link_to "編集", edit_note_path(note.id), data: { confirm: '本当に編集していいですか？' }, class: 'btn btn-sm btn-success' %> </td>
 　<td><%= link_to '削除', note_path(note.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-sm btn-danger' %> </td>
   </tr>

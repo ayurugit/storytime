@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'schedule/index'
+
   devise_for :users
   resources :notes
   resources :pictures

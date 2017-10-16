@@ -1,20 +1,44 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-12">
 
 <p><%= notice %></p>
 
 <h3><caption align="center">記録の作成</caption></h3>
 <%= link_to "活動記録を作成する", new_note_path, class: 'btn btn-default' %>
 
-<h3><caption align="center">検索機能</caption></h3>
-<%= search_form_for @search do |f| %>
-  <div class="form-group">
-
-　　<%= f.label :date_or_grade_or_book_title_or_author_cont %>
-　  <%= f.search_field :date_or_grade_or_book_title_or_author_cont, class: "form-control", placeholder: "検索" %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">検索</div>
   </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+  <div class="panel-body">
+
+    <%= search_form_for(@q, method: :get) do |f| %>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= f.label :grade_cont %>
+            <%= f.text_field :grade_cont, class: "form-control", placeholder: "部分一致" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= f.label :book_title_or_author_cont %>
+            <%= f.text_field :book_title_or_author_cont, class: "form-control", placeholder: "複数条件部分一致" %>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-inline">
+            <%= f.label :date %>
+            <%= f.date_select :date_gt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %>〜
+            <%= f.date_select :date_lt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %>
+          </div>
+        </div>
+      </div>  
+      <%= f.submit '検索', class: "btn btn-primary" %>
+      <%= link_to 'クリア', url_for, class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
 
 
 <h3><caption align="center">活動記録一覧</caption></h3>
@@ -52,9 +76,9 @@
 </tbody>
 </table>
 
-<div id="page-top-btn" class="page-top-btn">
+  <div id="page-top-btn" class="page-top-btn">
     <p><a class="move-page-top" id="move-page-top">▲</a></p>
-</div>
+  </div>
 
   </div>
 </div>

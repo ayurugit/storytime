@@ -2,9 +2,9 @@ class NotesController < ApplicationController
     before_action :set_note, only: [:edit, :update, :destroy]
 
   def index
-   @notes = Note.all
-   @search = Note.search(params[:q])
-   @notes = @search.result  
+   @q = Note.ransack(params[:q])
+   @notes = @q.result
+   
   end
 
   def new

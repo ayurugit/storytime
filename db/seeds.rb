@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require "csv"
+
+CSV.foreach('db/note.csv', encoding: 'Shift_JIS:UTF-8') do |row|
+  Note.create(:date => row[0], :grade => row[1], :place => row[2], :book_title => row[3], :author => row[4], :member => row[5])
+end

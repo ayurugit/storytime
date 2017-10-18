@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :topics
   get 'schedule/index'
 
   devise_for :users
-  resources :notes
+
   resources :pictures
+
+  resources :notes
 
   root 'top#index'
   

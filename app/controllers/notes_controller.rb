@@ -4,6 +4,8 @@ class NotesController < ApplicationController
   def index
    @q = Note.ransack(params[:q])
    @notes = @q.result
+   @notes = Note.all.order(created_at: :desc)
+   @notes = Note.page(params[:page]).per(20)
   end
 
   def new

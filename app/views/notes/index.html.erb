@@ -78,13 +78,14 @@
   <td><%= link_to "編集", edit_note_path(note.id), data: { confirm: '本当に編集していいですか？' }, class: 'btn btn-sm btn-success' %> </td>
 　<td><%= link_to '削除', note_path(note.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-sm btn-danger' %> </td>
   </tr>
+</tr>
 
 <% end %>
 
-</tr>
 </tbody>
 </table>
 
+<%= paginate @notes %>
 
   <div id="page-top-btn" class="page-top-btn">
     <p><a class="move-page-top" id="move-page-top">▲</a></p>

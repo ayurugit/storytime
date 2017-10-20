@@ -29,19 +29,22 @@ header ul:after {
 
 
 .main-header {
-  padding-bottom: 30%;
-  width: 100%;
-  background-size: cover;
-  background-image: url("");
+  padding-bottom: 50%;
+  background-image: url("books.png");
+  background-position: center center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  opacity: 0.9;
+  background-size: cover;
+  background-color: #464646;
 }
+
+
 
 .main-header img {
   display: block;
   margin: 0 auto;
   width: 100%;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .about {
@@ -52,8 +55,8 @@ header ul:after {
 
 .function {
   background-color: white;
-  padding: 80px;
-  padding-bottom: 185px;
+  padding: 10px;
+  padding-bottom: 10px;
 }
 
 

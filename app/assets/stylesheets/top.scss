@@ -27,12 +27,14 @@ header ul:after {
   clear: both;
 }
 
+
 .main-header {
-  padding-bottom: 20%;
+  padding-bottom: 30%;
   width: 100%;
   background-size: cover;
   background-image: url("");
   background-attachment: fixed;
+  opacity: 0.9;
 }
 
 .main-header img {

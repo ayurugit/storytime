@@ -21,7 +21,7 @@ header {
     }
   }
   .navbar-nav > li > a {
-    color: #ccc;
+    color: #white;
     &:hover, &:focus {
       color: white;
     }
@@ -37,7 +37,7 @@ header {
 }
 @media (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ccc;
+    color: #white;
     text-align: center;
     &:hover, &:focus {
       color: white;
@@ -91,7 +91,7 @@ footer {
   width: 100%;
   background-color:#00CCFF;
   padding: 20px 0 10px 0;
-  color: gray;
+  color: black;
   margin: auto;
   padding-bottom: 12px;
   font-size: 8px;

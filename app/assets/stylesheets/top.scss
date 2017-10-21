@@ -4,6 +4,7 @@ header {
   height: 54px;
 }
 
+
 .navbar-default {
     border: 0;
 }
@@ -52,7 +53,7 @@ header {
 
 
 .main-header {
-  padding-bottom: 50%;
+  padding-bottom: 40%;
   background-image: url("books.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -60,7 +61,6 @@ header {
   background-size: cover;
   background-color: #464646;
 }
-
 
 
 .main-header img {
@@ -72,6 +72,10 @@ header {
 
 .about {
   background-color: white;
+  background-image: url("colorfuldots.png");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: cover;
   color: #333;
   padding: 80px;
 }

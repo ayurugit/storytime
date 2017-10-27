@@ -22,6 +22,9 @@ class PicturesController < ApplicationController
 
   
   def edit
+    if @picture.user.id != current_user.id
+      redirect_to controller: 'topics', action: 'index'
+    end  
   end
   
   def show
@@ -36,6 +39,9 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    if @picture.user.id != current_user.id
+      redirect_to controller: 'topics', action: 'index'
+    end  
     @picture.destroy
     redirect_to pictures_path, notice: "写真を削除しました！"
   end

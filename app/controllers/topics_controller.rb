@@ -11,7 +11,7 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
-  end
+  end    
 
   # GET /topics/new
   def new
@@ -20,19 +20,23 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
+    if @topic.user_id != current_user.id
+    redirect_to controller: 'topics', action: 'index'
+    end    
   end
 
   # POST /topics
   # POST /topics.json
   def create
     @topic = Topic.new(topic_params)
+    @topic.user_id = current_user.id
 
     respond_to do |format|
       if @topic.save
         format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
         format.json { render :show, status: :created, location: @topic }
       else
-        format.html { render :new }
+        format.html { render :new }and return
         format.json { render json: @topic.errors, status: :unprocessable_entity }
       end
     end
@@ -55,9 +59,12 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
+    if @topic.user.id != current_user.id
+      redirect_to controller: 'topics', action: 'index'
+    end    
     @topic.destroy
     respond_to do |format|
-      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
+      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }and return
       format.json { head :no_content }
     end
   end
